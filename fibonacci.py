@@ -24,7 +24,7 @@ def fibonacci_iterative_space(n):
         result = 0
 
         for i in range(1, n):
-            result = temp0 + temp1
+            result = temp0 + temp1                                                                                                                                                                                                    
             temp0, temp1 = temp1, result
         return result
 

@@ -4,9 +4,10 @@ def mergesort(S):
         return S
     else:
         mid = n // 2
-        U = mergesort(S[0 : mid])
-        V = mergesort(S[mid : n])
+        U = mergesort(S[0: mid])
+        V = mergesort(S[mid: n])
         return merge(U, V)
+
 
 def merge(U, V):
     S = []
@@ -20,13 +21,14 @@ def merge(U, V):
             j += 1
 
     if i < len(U):
-        S += U[i : len(U)]
+        S += U[i: len(U)]
     else:
-        S += V[j : len(V)]
+        S += V[j: len(V)]
     return S
 
+
 if __name__ == '__main__':
-    S = [27, 10, 12, 20, 25, 13, 15, 22]
+    S = [4, 7, 9, 2, 1, 13, 8, 5, 6, 12]
     print(S)
     X = mergesort(S)
     print(X)

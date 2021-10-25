@@ -27,8 +27,38 @@ def merge(U, V):
     return S
 
 
+def mergesort_enhanced(s, low, high):
+    if low < high:
+        mid = (low + high) // 2
+        mergesort_enhanced(s, low, mid)
+        mergesort_enhanced(s, mid + 1, high)
+        merge_enhanced(s, low, mid, high)
+
+
+def merge_enhanced(s, low, mid, high):
+    result = []
+    i = low
+    j = mid + 1
+    while i <= mid and j <= high:
+        if s[i] < s[j]:
+            result.append(s[i])
+            i += 1
+        else:
+            result.append(s[j])
+            j += 1
+    if i <= mid:
+        result += s[i: mid + 1]
+    else:
+        result += s[j: high + 1]
+    for k in range(low, high + 1):
+        s[k] = result[k - low]
+
+
 if __name__ == '__main__':
     S = [4, 7, 9, 2, 1, 13, 8, 5, 6, 12]
+    # print(S)
+    # X = mergesort(S)
+    # print(X)
+
+    mergesort_enhanced(S, 0, len(S) - 1)
     print(S)
-    X = mergesort(S)
-    print(X)

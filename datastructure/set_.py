@@ -12,4 +12,4 @@ print(s)
 s.remove(50)
 print(s)
 # 모두 삭제
-# s.clear()
+s.clear()

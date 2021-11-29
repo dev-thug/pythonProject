@@ -1,13 +1,16 @@
+from collections import deque
+
 n = int(input())
-card = [i for i in range(n)]
+dq = deque()
+for i in range(n):
+    dq.append(i)
 command = True
-while len(card) > 1:
+while len(dq) > 1:
     if command:
-        card.pop(0)
+        dq.popleft()
         command = False
     else:
-        card.append(card[0])
-        card.pop(0)
+        dq.append(dq.popleft())
         command = True
 
-print(card[0]+1)
+print(dq.pop()+1)

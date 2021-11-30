@@ -3,7 +3,7 @@ from collections import deque
 N = int(input())
 
 # 선언과 동시에 넣기
-dq = deque(range(1, N+1))
+dq = deque(* range(1, N+1))
 # for i in range(1, N+1):
 #     dq.append(i)
 

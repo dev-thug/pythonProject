@@ -7,7 +7,7 @@ arr = [10, 11, 12, 13]
 
 arr[2] = 5
 
-print(arr)
+print(sorted(arr)[0])
 
 # 연결 리스트 Linked List
 # - 삽입/삭제 : O(1)

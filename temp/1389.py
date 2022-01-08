@@ -14,7 +14,6 @@ for _ in range(M):
 
 answer = sys.maxsize
 min_index = 0
-print(adj)
 
 
 def bfs(root):
